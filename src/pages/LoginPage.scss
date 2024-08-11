@@ -1,0 +1,96 @@
+.login-page {
+  display: grid;
+  grid-template-rows: 1fr auto; /* Content and footer */
+  place-items: center;
+  min-height: 100vh;
+  // background-image: url("../images/background.jpg");
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Full height except footer */
+
+    .card {
+      max-width: 400px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        .p-button {
+          width: 100%;
+          transition: background-color 0.3s, transform 0.3s;
+
+          &.modern-button {
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          }
+
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          }
+        }
+      }
+
+      .footer-content {
+        margin-top: 2rem;
+        color: black;
+
+        p {
+          margin: 0;
+          font-size: 0.9rem;
+          color: #666;
+        }
+
+        .social-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin-top: 1rem;
+
+          .p-button {
+            transition: transform 0.3s;
+
+            &:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            }
+          }
+        }
+
+        .version {
+          margin-top: 1rem;
+          font-size: 0.9rem;
+          color: #666;
+        }
+      }
+    }
+  }
+}

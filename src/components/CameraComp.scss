@@ -1,0 +1,108 @@
+/* CameraComp.scss */
+.camera-comp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .grid-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+
+    &.reserved {
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.camera {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .header {
+        margin-bottom: 10px;
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        background-color: #000;
+        border-radius: 20px;
+
+        video {
+          width: 100%;
+          border-radius: 20px;
+        }
+      }
+
+      .buttons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+
+    &.data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .data-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, auto);
+        gap: 10px;
+        width: 100%;
+
+        .data-cell {
+          background-color: #e0e0e0;
+          padding: 10px;
+          border-radius: 5px;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .confirm-button {
+    background-color: #007ad9;
+    color: white;
+  }
+
+  .next-phase-button {
+    &.disabled {
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+
+    &.enabled {
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  .back-button {
+    background-color: #ffc107;
+    color: white;
+  }
+}

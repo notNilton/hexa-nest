@@ -1,0 +1,25 @@
+/* flags.css */
+.react-flags-select {
+  --react-flags-select-dropdown-bg: #fff;
+  --react-flags-select-dropdown-border: 1px solid #ddd;
+  --react-flags-select-selected-bg: linear-gradient(45deg, #4a038b, #8621e4);
+  --react-flags-select-selected-color: #fff;
+  --react-flags-select-hover-bg: hsl(0, 0%, 94%);
+  --react-flags-select-hover-color: #ffffff;
+  font-weight: bold; /* Adicionado para tornar a fonte em negrito */
+}
+
+.react-flags-select__button {
+  background-color: var(--react-flags-select-selected-bg);
+  color: var(--react-flags-select-selected-color);
+}
+
+.react-flags-select__options {
+  background-color: var(--react-flags-select-dropdown-bg);
+  border: var(--react-flags-select-dropdown-border);
+}
+
+.react-flags-select__option:hover {
+  background-color: var(--react-flags-select-hover-bg);
+  color: var(--react-flags-select-hover-color);
+}

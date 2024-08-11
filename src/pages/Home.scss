@@ -1,0 +1,19 @@
+// HomePage.scss
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .navbar-container {
+    flex: 0 1 auto;
+  }
+
+  .content-container {
+    flex: 1 1 auto;
+    display: flex;
+  }
+
+  .footer-container {
+    flex: 0 1 auto;
+  }
+}

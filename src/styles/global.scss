@@ -1,0 +1,10 @@
+// HTML and Body
+html, body {
+  height: 100%;
+  width: 100%;
+  line-height: 1.5;
+  background-color: #f8f9fa; // Light background color
+  color: #333; // Dark text color for good contrast
+  -webkit-font-smoothing: antialiased; // Antialiasing for better font rendering
+  -moz-osx-font-smoothing: grayscale; // Antialiasing for better font rendering
+}

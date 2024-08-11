@@ -1,0 +1,21 @@
+/* MainComp.scss */
+.main-container {
+  background: white;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  gap: 16px; /* space between the columns */
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent overflow of the container */
+}
+
+.camera-comp,
+.input-comp {
+  background: #f0f0f0;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
