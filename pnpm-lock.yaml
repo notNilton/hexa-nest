@@ -11,6 +11,9 @@ importers:
       i18next:
         specifier: ^23.12.2
         version: 23.12.2
+      marked:
+        specifier: ^14.0.0
+        version: 14.0.0
       pdfjs-dist:
         specifier: ^4.5.136
         version: 4.5.136
@@ -863,6 +866,11 @@ packages:
   make-dir@3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
+
+  marked@14.0.0:
+    resolution: {integrity: sha512-uIj4+faQ+MgHgwUW1l2PsPglZLOLOT1uErt06dAPtx2kjteLAkbsd/0FiYg/MGS+i7ZKLb7w2WClxHkzOOuryQ==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -2123,6 +2131,8 @@ snapshots:
     dependencies:
       semver: 6.3.1
     optional: true
+
+  marked@14.0.0: {}
 
   merge2@1.4.1: {}
 

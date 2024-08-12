@@ -8,6 +8,7 @@
   text-align: center;
   color: #333;
   background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
 }
 
 .hidden-file-input {
@@ -30,6 +31,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 16px;
   }
 
   button:hover {
@@ -49,7 +51,7 @@
 .text-container {
   flex: 1; /* Each container takes up 50% of the width */
   padding: 20px;
-  overflow: auto;
+  // overflow: auto;
 }
 
 .pdf-container {
@@ -65,10 +67,25 @@
 .text-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   overflow-y: auto;
   white-space: pre-wrap; /* Preserve line breaks and white spaces */
   word-wrap: break-word;
+  font-size: 16px;
+  line-height: 1.6;
+
+}
+
+.extracted-text {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
 }

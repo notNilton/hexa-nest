@@ -15,7 +15,7 @@ const HomeComp: React.FC = () => {
     }
   };
 
-  const uploadAndExtractText = async (file: File) => {
+  const uploadAndExtractText = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
 
@@ -27,7 +27,7 @@ const HomeComp: React.FC = () => {
 
       if (response.ok) {
         const data = await response.json();
-        setExtractedText(data.text);
+        setExtractedText(data.summary); // Mostra o resumo gerado pelo ChatGPT
       } else {
         console.error("Failed to extract text from PDF.");
       }
@@ -59,8 +59,10 @@ const HomeComp: React.FC = () => {
           )}
         </div>
         <div className="text-container">
-          <h1>Texto Extraído</h1>
-          <p>{extractedText || "Nenhum texto extraído ainda."}</p>
+          <h1 className="title">Texto Extraído</h1>
+          <div className="extracted-text">
+            {extractedText || "Nenhum texto extraído ainda."}
+          </div>
         </div>
       </div>
     </div>
