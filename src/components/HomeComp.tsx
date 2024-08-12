@@ -3,6 +3,7 @@ import "./HomeComp.scss";
 
 const HomeComp: React.FC = () => {
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
+  const [extractedText, setExtractedText] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -10,25 +11,43 @@ const HomeComp: React.FC = () => {
     if (file) {
       const url = URL.createObjectURL(file);
       setPdfUrl(url);
+      uploadAndExtractText(file);
     }
   };
 
-  const handleButtonClick = () => {
-    fileInputRef.current?.click(); // Trigger the file input click
+  const uploadAndExtractText = async (file: File) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("http://localhost:5000/extract-text", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setExtractedText(data.text);
+      } else {
+        console.error("Failed to extract text from PDF.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
     <div className="home-comp">
       <div className="top-bar">
-        <button onClick={handleButtonClick}>Upload PDF</button>
-        <button>Gerar Análise</button>
-        <button>Anonimizar</button>
+        <button onClick={() => fileInputRef.current?.click()}>
+          Upload PDF
+        </button>
         <input
           ref={fileInputRef}
           type="file"
           accept="application/pdf"
           onChange={handleFileChange}
-          className="hidden-file-input" // Applying a class instead of inline styles
+          className="hidden-file-input"
           aria-label="Upload PDF"
         />
       </div>
@@ -40,13 +59,8 @@ const HomeComp: React.FC = () => {
           )}
         </div>
         <div className="text-container">
-          <h1>Welcome to Home Page</h1>
-          <p>This is the main landing page of the application.</p>
-          <p>
-            You can upload a PDF file on the left, and it will be displayed
-            here. On the right, you can have your content or any other relevant
-            information.
-          </p>
+          <h1>Texto Extraído</h1>
+          <p>{extractedText || "Nenhum texto extraído ainda."}</p>
         </div>
       </div>
     </div>
