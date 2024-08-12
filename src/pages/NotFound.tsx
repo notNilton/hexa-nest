@@ -1,4 +1,3 @@
-import FooterComp from "../components/FooterComp";
 import SidebarComp from "../components/SidebarComp";
 import NavbarComp from "../components/NavbarComp";
 import NotFoundComp from "../components/NotFoundComp";
@@ -16,9 +15,6 @@ const NotFoundPage = () => {
       <div className="content-container">
         <NotFoundComp />
       </div>
-      {/* <div className="footer-container">
-        <FooterComp />
-      </div> */}
     </div>
   );
 };

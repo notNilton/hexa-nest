@@ -1,11 +1,9 @@
-import React from "react";
-import FooterComp from "../components/FooterComp";
 import SidebarComp from "../components/SidebarComp";
 import NavbarComp from "../components/NavbarComp";
-import HomeComp from "../components/HomeComp.tsx";
+import HomeComp from "../components/HomeComp";
 import "./Home.scss";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <div className="home">
       <div className="navbar-container">
@@ -16,9 +14,6 @@ const Home: React.FC = () => {
       </div>
       <div className="content-container">
         <HomeComp />
-      </div>
-      <div className="footer-container">
-        <FooterComp />
       </div>
     </div>
   );

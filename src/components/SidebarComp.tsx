@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./SidebarComp.scss";
+import packageJson from "../../package.json"; // Importação de JSON
 
 const SidebarComp: React.FC = () => {
   const navigate = useNavigate();
+  const version = packageJson.version; // Acesse a versão
 
   const handleNavigation = (path: string) => {
     if (path === "/logout") {
@@ -28,11 +30,16 @@ const SidebarComp: React.FC = () => {
             <li
               key={idx}
               onClick={() => handleNavigation(item.path)}
-              style={{ cursor: "pointer" }}
+              className="menu-item"
             >
               <span className="menu-icon">{item.icon}</span>
             </li>
           ))}
+          <li className="menu-item version-item">
+            <span className="version-icon" title={`Version ${version}.`}>
+              V
+            </span>
+          </li>
         </ul>
       </div>
     </div>

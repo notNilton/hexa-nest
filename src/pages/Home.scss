@@ -1,19 +1,37 @@
-// HomePage.scss
 .home {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr; /* Sidebar and main content */
+  grid-template-rows: auto 1fr auto; /* Navbar, content, and footer */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport height */
+  overflow: hidden; /* Prevent page overflow */
 
   .navbar-container {
-    flex: 0 1 auto;
+    grid-column: 1 / 3; /* Span across both columns */
+    grid-row: 1 / 2; /* First row */
+  }
+
+  .sidebar-container {
+    grid-column: 1 / 2; /* First column */
+    grid-row: 2 / 3; /* Second row */
+    overflow: hidden; /* Prevent sidebar overflow */
   }
 
   .content-container {
-    flex: 1 1 auto;
+    grid-column: 2 / 3; /* Second column */
+    grid-row: 2 / 3; /* Second row */
+    overflow: auto; /* Allow scrolling */
+    padding: 20px; /* Add padding to the content */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa; /* Light background for the content area */
   }
 
   .footer-container {
-    flex: 0 1 auto;
+    grid-column: 1 / 3; /* Span across both columns */
+    grid-row: 3 / 4; /* Third row */
+    height: 50px;
   }
 }

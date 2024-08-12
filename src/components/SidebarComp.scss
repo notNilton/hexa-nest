@@ -31,6 +31,33 @@ li:hover {
 
 .menu-icon {
   color: white;
-  font-size: 24px; /* Larger size for icons */
+  font-size: 24px;
   display: block;
+}
+
+.version-item {
+  position: relative;
+  margin-top: auto; /* Push the version item to the bottom */
+}
+
+.version-icon {
+  color: white;
+  background-color: #555;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.version-icon:hover {
+  background-color: #666;
+}
+
+.version-icon:hover::after {
+  opacity: 1;
 }
