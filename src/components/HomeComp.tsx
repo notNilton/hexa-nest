@@ -59,7 +59,7 @@ const HomeComp: React.FC = () => {
           )}
         </div>
         <div className="text-container">
-          <h1 className="title">Texto Extraído</h1>
+          <h3 className="title">Texto Extraído</h3>
           <div className="extracted-text">
             {extractedText || "Nenhum texto extraído ainda."}
           </div>
