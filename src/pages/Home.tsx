@@ -1,6 +1,7 @@
 import SidebarComp from "../components/SidebarComp";
 import NavbarComp from "../components/NavbarComp";
 import HomeComp from "../components/HomeComp";
+import FooterComp from "../components/FooterComp";
 import "./Home.scss";
 
 const Home = () => {
@@ -14,6 +15,9 @@ const Home = () => {
       </div>
       <div className="content-container">
         <HomeComp />
+      </div>
+      <div className="footer-container">
+        <FooterComp />
       </div>
     </div>
   );

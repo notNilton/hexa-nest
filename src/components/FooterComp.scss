@@ -2,29 +2,80 @@
   background-color: #333;
   color: white;
   text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .footer-content {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
+  flex-wrap: nowrap;
+  /* Prevent wrapping */
+  font-size: 14px;
 
-.version {
-  color: #aaa;
-}
+  .version,
+  .github-button,
+  .website-button,
+  .twitter-button,
+  .copyright,
+  .disclaimer,
+  .contact-info {
+    margin: 0 10px;
+    /* Add space between each element */
+  }
 
-.github-button {
-  background-color: transparent;
-  border: 1px solid #aaa;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
+  .footer-divider {
+    margin: 0 5px;
+    color: #888;
+    /* Divider color */
+  }
 
-.github-button:hover {
-  background-color: #444;
+  .github-button,
+  .website-button,
+  .twitter-button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #aaa;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: #444;
+      border-color: #fff;
+    }
+
+    .github-icon,
+    .website-icon,
+    .twitter-icon {
+      margin-right: 5px;
+      font-size: 16px;
+    }
+  }
+
+  .disclaimer a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .contact-info a {
+    color: #aaa;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

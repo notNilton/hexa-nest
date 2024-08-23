@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FaHome, FaChartBar, FaUsers, FaSignOutAlt } from "react-icons/fa";
 import "./SidebarComp.scss";
-import packageJson from "../../package.json"; // Importação de JSON
+import packageJson from "../../package.json";
 
 const SidebarComp: React.FC = () => {
   const navigate = useNavigate();
-  const version = packageJson.version; // Acesse a versão
+  const version = packageJson.version;
 
   const handleNavigation = (path: string) => {
     if (path === "/logout") {
@@ -16,10 +17,10 @@ const SidebarComp: React.FC = () => {
   };
 
   const menuItems = [
-    { icon: "🏠", path: "/" }, // Home icon
-    { icon: "📊", path: "/dashboard" }, // Dashboard icon
-    { icon: "👥", path: "/usuarios" }, // Users icon
-    { icon: "🚪", path: "/logout" }, // Logout icon
+    { icon: <FaHome />, path: "/" },
+    { icon: <FaChartBar />, path: "/dashboard" },
+    { icon: <FaUsers />, path: "/usuarios" },
+    { icon: <FaSignOutAlt />, path: "/logout" },
   ];
 
   return (
@@ -35,11 +36,6 @@ const SidebarComp: React.FC = () => {
               <span className="menu-icon">{item.icon}</span>
             </li>
           ))}
-          <li className="menu-item version-item">
-            <span className="version-icon" title={`Version ${version}.`}>
-              V
-            </span>
-          </li>
         </ul>
       </div>
     </div>

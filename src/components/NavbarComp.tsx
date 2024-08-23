@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { FaHome, FaUserCircle } from "react-icons/fa"; // Importing icons from react-icons
 import "./NavbarComp.scss";
 
 const NavbarComp: React.FC = () => {
@@ -28,35 +29,25 @@ const NavbarComp: React.FC = () => {
     <div className="navbar">
       <div className="wrapper">
         <div className="brand" onClick={goToHome}>
-          <span className="brand-icon">🏠</span>
-          <span className="brand-name">{t("myApp")}</span>{" "}
+          <FaHome className="brand-icon" /> {/* Using FontAwesome Home icon */}
+          <span className="brand-name">{t("MeuApp")}</span>{" "}
           {/* Use translation */}
         </div>
         <div className="items">
-          <div className="item" onClick={goToHome}>
-            {t("home")} {/* Use translation */}
-          </div>
-          <div className="item" onClick={goToProfile}>
-            {t("profile")} {/* Use translation */}
-          </div>
           <div className="item language-selector">
             <select
               value={language}
               onChange={handleLanguageChange}
               className="language-dropdown"
             >
-              <option value="en">EN</option>{" "}
-              {/* Note that the values should match the language codes in i18n */}
+              <option value="en">EN</option>
               <option value="pt">PT</option>
               <option value="es">ES</option>
             </select>
           </div>
           <div className="item avatar" onClick={goToProfile}>
-            <img
-              src="https://via.placeholder.com/40"
-              alt="User Avatar"
-              className="avatar-icon"
-            />
+            <FaUserCircle className="avatar-icon" />{" "}
+            {/* Using FontAwesome User icon */}
           </div>
         </div>
       </div>

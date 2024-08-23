@@ -1,84 +1,88 @@
+/* Navbar Component Styles */
 .navbar {
   background-color: #333;
   color: white;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
 
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  /* Wrapper for the content inside the Navbar */
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.brand {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
+    /* Brand section with icon and name */
+    .brand {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
 
-.brand-icon {
-  font-size: 24px;
-  margin-right: 10px;
-}
+      .brand-icon {
+        font-size: 24px;
+        margin-right: 10px;
+      }
 
-.brand-name {
-  font-size: 20px;
-  font-weight: bold;
-}
+      .brand-name {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
 
-.items {
-  display: flex;
-  align-items: center;
-}
+    /* Items section (language selector and avatar) */
+    .items {
+      display: flex;
+      align-items: center;
 
-.item {
-  margin-left: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
+      /* Individual item styles */
+      .item {
+        margin-left: 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: color 0.3s ease;
 
-.item:hover {
-  color: #f0f0f0;
-  text-decoration: underline;
-}
+        &:hover {
+          color: #f0f0f0;
+          text-decoration: underline;
+        }
 
-.avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        /* Avatar styles */
+        &.avatar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-.avatar-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #fff;
-  transition: border-color 0.3s ease;
-}
+          .avatar-icon {
+            font-size: 40px;
+            color: #fff;
+            transition: color 0.3s ease;
 
-.avatar-icon:hover {
-  border-color: #f0f0f0;
-}
+            &:hover {
+              color: #f0f0f0;
+            }
+          }
+        }
 
-.language-selector {
-  margin-right: 20px; /* Adjust spacing between language selector and avatar */
-}
+        /* Language selector dropdown styles */
+        &.language-selector {
+          margin-right: 20px;
 
-.language-dropdown {
-  background-color: #333;
-  color: white;
-  border: 1px solid #555;
-  border-radius: 4px;
-  padding: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease;
-}
+          .language-dropdown {
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
 
-.language-dropdown:hover {
-  background-color: #444;
+            &:hover {
+              background-color: #444;
+            }
+          }
+        }
+      }
+    }
+  }
 }
